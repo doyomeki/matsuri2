@@ -50,3 +50,33 @@ gem 'heroku'
 # Use Haml for views
 gem 'haml-rails'
 gem 'erb2haml'
+
+group :development, :test do
+  # Use cucumber as the test tool
+  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails-training-wheels'
+
+  # Use capybara as the test tool
+  gem 'capybara'
+
+  # Use rspec as the test tool
+  gem 'rspec-rails'
+
+  # Use spork for speed of server (no using)
+  gem 'spork'
+
+  # Use guard
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'growl'
+
+  gem 'webrat'
+  gem 'database_cleaner'
+
+  gem 'turnip'
+  gem 'factory_girl_rails'
+
+  gem 'simplecov', :require => false
+
+  gem "better_errors"
+end
