@@ -46,3 +46,7 @@ end
 
 # Use 'HEROKU'
 gem 'heroku'
+
+# Use Haml for views
+gem 'haml-rails'
+gem 'erb2haml'
