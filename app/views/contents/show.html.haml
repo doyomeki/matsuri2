@@ -1,36 +1,49 @@
-%p#notice= notice
+- model_class = Content
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %p
-  %b Event:
+  %strong= model_class.human_attribute_name(:event_id) + ':'
+  %br
   = @content.event_id
 %p
-  %b Room:
+  %strong= model_class.human_attribute_name(:room_id) + ':'
+  %br
   = @content.room_id
 %p
-  %b Title:
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
   = @content.title
 %p
-  %b Description:
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
   = @content.description
 %p
-  %b Start at:
+  %strong= model_class.human_attribute_name(:start_at) + ':'
+  %br
   = @content.start_at
 %p
-  %b Finish at:
+  %strong= model_class.human_attribute_name(:finish_at) + ':'
+  %br
   = @content.finish_at
 %p
-  %b Speaker name:
+  %strong= model_class.human_attribute_name(:speaker_name) + ':'
+  %br
   = @content.speaker_name
 %p
-  %b Speaker profile:
+  %strong= model_class.human_attribute_name(:speaker_profile) + ':'
+  %br
   = @content.speaker_profile
 %p
-  %b Speaker image:
+  %strong= model_class.human_attribute_name(:speaker_image) + ':'
+  %br
   = @content.speaker_image
 %p
-  %b Deleted at:
+  %strong= model_class.human_attribute_name(:deleted_at) + ':'
+  %br
   = @content.deleted_at
 
-= link_to 'Edit', edit_content_path(@content)
-\|
-= link_to 'Back', contents_path
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), contents_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_content_path(@content), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), content_path(@content), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
