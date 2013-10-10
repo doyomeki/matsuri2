@@ -1,4 +1,6 @@
 Matsuri2::Application.routes.draw do
+  resources :contents
+
   resources :rooms
 
   resources :events

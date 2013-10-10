@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Event:
+  = @content.event_id
+%p
+  %b Room:
+  = @content.room_id
+%p
+  %b Title:
+  = @content.title
+%p
+  %b Description:
+  = @content.description
+%p
+  %b Start at:
+  = @content.start_at
+%p
+  %b Finish at:
+  = @content.finish_at
+%p
+  %b Speaker name:
+  = @content.speaker_name
+%p
+  %b Speaker profile:
+  = @content.speaker_profile
+%p
+  %b Speaker image:
+  = @content.speaker_image
+%p
+  %b Deleted at:
+  = @content.deleted_at
+
+= link_to 'Edit', edit_content_path(@content)
+\|
+= link_to 'Back', contents_path
