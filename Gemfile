@@ -80,3 +80,6 @@ group :development, :test do
 
   gem "better_errors"
 end
+
+# Use the plugin which hides records of deleting them, being to recover them.
+gem 'paranoia', '~> 2.0.0'
