@@ -1,31 +1,36 @@
-= form_for @event do |f|
-  - if @event.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
-      %ul
-        - @event.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :capacity
-    = f.number_field :capacity
-  .field
-    = f.label :place
-    = f.text_field :place
-  .field
-    = f.label :start_datetime
-    = f.datetime_select :start_datetime
-  .field
-    = f.label :end_datetime
-    = f.datetime_select :end_datetime
-  .field
-    = f.label :deleted_at
-    = f.datetime_select :deleted_at
-  .actions
-    = f.submit 'Save'
+= form_for @event, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :title, :class => 'control-label'
+    .controls
+      = f.text_field :title, :class => 'text_field'
+  .control-group
+    = f.label :description, :class => 'control-label'
+    .controls
+      = f.text_field :description, :class => 'text_field'
+  .control-group
+    = f.label :capacity, :class => 'control-label'
+    .controls
+      = f.text_field :capacity, :class => 'text_field'
+  .control-group
+    = f.label :place, :class => 'control-label'
+    .controls
+      = f.text_field :place, :class => 'text_field'
+  .control-group
+    = f.label :start_at, :class => 'control-label'
+    .controls
+      = f.text_field :start_at, :class => 'text_field'
+  .control-group
+    = f.label :finish_at, :class => 'control-label'
+    .controls
+      = f.text_field :finish_at, :class => 'text_field'
+  .control-group
+    = f.label :deleted_at, :class => 'control-label'
+    .controls
+      = f.text_field :deleted_at, :class => 'text_field'
+  .control-group
+    = f.label :upcoming, :class => 'control-label'
+    .controls
+      = f.text_field :upcoming, :class => 'text_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), events_path, :class => 'btn'
