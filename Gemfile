@@ -87,6 +87,8 @@ group :development, :test do
   gem 'simplecov', :require => false
 
   gem "better_errors"
+
+  gem 'rails-erd'
 end
 
 # Use the plugin which hides records of deleting them, being to recover them.
