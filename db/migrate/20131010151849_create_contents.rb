@@ -2,7 +2,7 @@ class CreateContents < ActiveRecord::Migration
   def change
     create_table :contents do |t|
       t.integer :event_id
-      t.integer :room_id
+      t.integer :booth_id
       t.string :title
       t.string :description
       t.timestamp :start_at

@@ -6,7 +6,7 @@
     %tr
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:event_id)
-      %th= model_class.human_attribute_name(:room_id)
+      %th= model_class.human_attribute_name(:booth_id)
       %th= model_class.human_attribute_name(:title)
       %th= model_class.human_attribute_name(:description)
       %th= model_class.human_attribute_name(:start_at)
@@ -22,7 +22,7 @@
       %tr
         %td= link_to content.id, content_path(content)
         %td= content.event_id
-        %td= content.room_id
+        %td= content.booth_id
         %td= content.title
         %td= content.description
         %td= content.start_at

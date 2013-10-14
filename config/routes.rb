@@ -7,9 +7,9 @@ Matsuri2::Application.routes.draw do
   end
 
   namespace :admin do
+    resources :booths
     resources :events do
       resources :contents
     end
-    resources :rooms
   end
 end

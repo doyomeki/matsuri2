@@ -5,7 +5,7 @@ describe "contents/index" do
     assign(:contents, [
       stub_model(Content,
         :event_id => 1,
-        :room_id => 2,
+        :booth_id => 2,
         :title => "Title",
         :description => "Description",
         :speaker_name => "Speaker Name",
@@ -14,7 +14,7 @@ describe "contents/index" do
       ),
       stub_model(Content,
         :event_id => 1,
-        :room_id => 2,
+        :booth_id => 2,
         :title => "Title",
         :description => "Description",
         :speaker_name => "Speaker Name",

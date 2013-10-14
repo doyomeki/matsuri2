@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :content do
     event_id 1
-    room_id 1
+    booth_id 1
     title "MyString"
     description "MyString"
     start_at "2013-10-11 00:18:49"

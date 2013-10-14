@@ -4,7 +4,7 @@ describe "contents/show" do
   before(:each) do
     @content = assign(:content, stub_model(Content,
       :event_id => 1,
-      :room_id => 2,
+      :booth_id => 2,
       :title => "Title",
       :description => "Description",
       :speaker_name => "Speaker Name",

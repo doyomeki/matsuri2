@@ -1,4 +1,4 @@
-class Room < ActiveRecord::Base
+class Booth < ActiveRecord::Base
   acts_as_paranoid
 
   belongs_to :content

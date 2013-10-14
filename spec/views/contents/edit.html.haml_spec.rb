@@ -4,7 +4,7 @@ describe "contents/edit" do
   before(:each) do
     @content = assign(:content, stub_model(Content,
       :event_id => 1,
-      :room_id => 1,
+      :booth_id => 1,
       :title => "MyString",
       :description => "MyString",
       :speaker_name => "MyString",
@@ -19,7 +19,7 @@ describe "contents/edit" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", content_path(@content), "post" do
       assert_select "input#content_event_id[name=?]", "content[event_id]"
-      assert_select "input#content_room_id[name=?]", "content[room_id]"
+      assert_select "input#content_booth_id[name=?]", "content[booth_id]"
       assert_select "input#content_title[name=?]", "content[title]"
       assert_select "input#content_description[name=?]", "content[description]"
       assert_select "input#content_speaker_name[name=?]", "content[speaker_name]"
