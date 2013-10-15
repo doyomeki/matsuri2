@@ -3,4 +3,5 @@ class Content < ActiveRecord::Base
 
   belongs_to :event
   has_one :booth
+  has_many :entries
 end
