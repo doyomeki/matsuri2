@@ -74,8 +74,13 @@ group :development, :test do
   gem 'spork'
 
   # Use guard
+  gem 'guard'
   gem 'guard-rspec'
   gem 'guard-cucumber'
+  gem 'guard-rubocop'
+
+  # Gemfileを監視して変更があったら自動でbundle installを実行
+  gem 'guard-bundler'
   gem 'growl'
 
   gem 'webrat'
@@ -86,9 +91,24 @@ group :development, :test do
 
   gem 'simplecov', :require => false
 
+  gem 'binding_of_caller'
   gem "better_errors"
+  gem 'pry'
+
+  gem 'pry-rails'
+  gem 'pry-coolline'
+  gem 'pry-debugger'
+  gem 'pry-debugger'
+  gem 'awesome_print'
+
+  gem 'hirb'
+  gem 'hirb-unicode'
 
   gem 'rails-erd'
+  # static code analyzer
+  gem 'rubocop', require: false
+  # gem 'guard-rubocop'
+
 end
 
 # Use the plugin which hides records of deleting them, being to recover them.
