@@ -1,4 +1,4 @@
-= form_for @event, :html => { :class => 'form-horizontal' } do |f|
+= form_for ["admin",@event], :html => { :class => 'form-horizontal' } do |f|
   .control-group
     = f.label :title, :class => 'control-label'
     .controls
@@ -33,4 +33,4 @@
       = f.text_field :upcoming, :class => 'text_field'
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), events_path, :class => 'btn'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")),admin_events_path, :class => 'btn'
