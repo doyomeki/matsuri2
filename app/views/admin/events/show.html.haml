@@ -1,7 +1,4 @@
 - model_class = Event
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.titleize
-
 %p
   %strong= model_class.human_attribute_name(:title) + ':'
   %br
@@ -26,14 +23,10 @@
   %strong= model_class.human_attribute_name(:finish_at) + ':'
   %br
   = @event.finish_at
-%p
-  %strong= model_class.human_attribute_name(:deleted_at) + ':'
-  %br
-  = @event.deleted_at
-%p
-  %strong= model_class.human_attribute_name(:upcoming) + ':'
-  %br
-  = @event.upcoming
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), admin_events_path, :class => 'btn'
+
+= render "admin/contents/form"
+%br
+= render partial: @event.contents

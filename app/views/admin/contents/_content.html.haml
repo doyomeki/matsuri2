@@ -1,0 +1,21 @@
+- model_class = Content
+%table.table
+  %tr
+    %th= model_class.human_attribute_name(:title)
+    %td= content.title
+    %th= model_class.human_attribute_name(:booth_id)
+    %td= content.booth_id
+  %tr
+    %th= model_class.human_attribute_name(:start_at)
+    %td= content.start_at
+    %th= model_class.human_attribute_name(:finish_at)
+    %td= content.finish_at
+  %tr
+    %th{colspan: "4"}
+      = model_class.human_attribute_name(:description)
+      = content.description
+  %tr
+    %td{colspan: "2", rowspan: "2"}= "image"
+    %td{colspan: "2"}= content.speaker_name
+  %tr
+    %td{colspan: "2"}= content.speaker_profile
