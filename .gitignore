@@ -15,4 +15,4 @@
 /config/database.yml
 
 # Ignore database schema file.
-#/db/schema.rb
+/db/schema.rb
