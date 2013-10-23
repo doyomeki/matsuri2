@@ -12,7 +12,7 @@ namespace :user do
       user = User.where(email: email).first
       raise "user is not found." if user.blank?
       user.admin = true
-      puts "OK, #{user.name} is administrator!#{user.admin}" if user.save
+      puts "OK, #{user.email} is administrator!#{user.admin}" if user.save
     end
   end
 end
