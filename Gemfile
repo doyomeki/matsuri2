@@ -116,3 +116,6 @@ gem 'paranoia', '~> 2.0.0'
 
 # Use as the flexible authentication solution
 gem 'devise'
+
+# Use Internationalize
+gem 'rails-i18n'
