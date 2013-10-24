@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      event:
+        upcoming: "TOP"
+        title: "イベント名"
+        place: "場所"
+        start_at: "開始時間"
+        finish_at: "終了時間"

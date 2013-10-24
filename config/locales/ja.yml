@@ -1,0 +1,20 @@
+ja:
+  date:
+    name: "日付"
+    order:
+      - :year
+      - :month
+      - :day
+  time:
+    name: "時間"
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      date: "%Y/%m/%d"
+      time: "%H:%M:%S"
+
+  helpers:
+    actions: "アクション"
+    links:
+      new: "新規作成"
+      edit: "編集"
+      destroy: "削除"
