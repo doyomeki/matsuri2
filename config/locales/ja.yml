@@ -10,11 +10,17 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       date: "%Y/%m/%d"
-      time: "%H:%M:%S"
+      time: "%H:%M"
 
   helpers:
     actions: "アクション"
     links:
       new: "新規作成"
       edit: "編集"
+      cancel: "キャンセル"
       destroy: "削除"
+
+  flash:
+    create_event: "イベントを作成しました。"
+    update_event: "イベントを更新しました。"
+    destroy_event: "イベントを削除しました。"
