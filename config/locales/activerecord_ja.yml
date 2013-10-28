@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      event:
+        description: "説明"
+        finish_at: "終了時間"
+        place: "場所"
+        start_at: "開始時間"
+        title: "イベント名"
+        upcoming: "TOP"
+    errors:
+      template:
+        header:
+          other: "%{count}個のエラーが発生しました。"
+      messages:
+        blank: "を入力してください。"
+        too_long: "は%{count}文字以内で入力してください。"

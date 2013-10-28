@@ -4,33 +4,21 @@
     .controls
       = f.text_field :title, :class => 'text_field'
   .control-group
-    = f.label :description, :class => 'control-label'
+    = f.label :start_at, :class => 'control-label'
     .controls
-      = f.text_field :description, :class => 'text_field'
+      .date_time= f.datetime_select :start_at, datetime_separator: "  ", use_month_numbers: true
   .control-group
-    = f.label :capacity, :class => 'control-label'
+    = f.label :finish_at, :class => 'control-label'
     .controls
-      = f.text_field :capacity, :class => 'text_field'
+      .date_time= f.datetime_select :finish_at, datetime_separator: "  ", use_month_numbers: true
   .control-group
     = f.label :place, :class => 'control-label'
     .controls
       = f.text_field :place, :class => 'text_field'
   .control-group
-    = f.label :start_at, :class => 'control-label'
+    = f.label :description, :class => 'control-label'
     .controls
-      = f.text_field :start_at, :class => 'text_field'
-  .control-group
-    = f.label :finish_at, :class => 'control-label'
-    .controls
-      = f.text_field :finish_at, :class => 'text_field'
-  .control-group
-    = f.label :deleted_at, :class => 'control-label'
-    .controls
-      = f.text_field :deleted_at, :class => 'text_field'
-  .control-group
-    = f.label :upcoming, :class => 'control-label'
-    .controls
-      = f.text_field :upcoming, :class => 'text_field'
+      = f.text_area :description, class: 5, rows: 4
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")),admin_events_path, :class => 'btn'
