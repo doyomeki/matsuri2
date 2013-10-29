@@ -1,32 +1,18 @@
 - model_class = Event
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
-%table.table.table-striped
-  %thead
-    %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:title)
-      %th= model_class.human_attribute_name(:description)
-      %th= model_class.human_attribute_name(:capacity)
-      %th= model_class.human_attribute_name(:place)
-      %th= model_class.human_attribute_name(:start_at)
-      %th= model_class.human_attribute_name(:finish_at)
-      %th= model_class.human_attribute_name(:deleted_at)
-      %th= model_class.human_attribute_name(:upcoming)
-      %th= model_class.human_attribute_name(:created_at)
-      %th=t '.actions', :default => t("helpers.actions")
-  %tbody
-    - @events.each do |event|
-      %tr
-        %td= link_to event.id, event_path(event)
-        %td= event.title
-        %td= event.description
-        %td= event.capacity
-        %td= event.place
-        %td= event.start_at
-        %td= event.finish_at
-        %td= event.deleted_at
-        %td= event.upcoming
-        %td=l event.created_at
-        %td
-
+  - event = @events.first
+  %h1=t '.title', :default => event.title
+%p.description= event.description
+%ul.event-info
+  %li
+    開催:
+    = l event.start_at, format: :date
+    = l event.start_at, format: :time
+    = "〜"
+    = l event.finish_at, format: :time
+  %li
+    会場：
+    = event.place
+  %li
+    定員：
+    = event.capacity
