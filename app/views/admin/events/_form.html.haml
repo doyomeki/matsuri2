@@ -11,6 +11,7 @@
     = f.label :finish_at, :class => 'control-label'
     .controls
       .date_time= f.datetime_select :finish_at, datetime_separator: "  ", use_month_numbers: true
+      = f.text_field :finish_at, class: "datepicker text_field"
   .control-group
     = f.label :place, :class => 'control-label'
     .controls

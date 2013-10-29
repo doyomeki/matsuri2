@@ -11,7 +11,9 @@
   %tbody
     - @events.each do |event|
       %tr
-        %td= event.upcoming ? "○" : "-"
+        %td
+          = radio_button :event, "upcoming", event.id, checked: event.upcoming, id: event.id, class: "to_button"
+          = label :event, "○", for: event.id
         %td= link_to event.title, event_path(event)
         %td= event.place
         %td= l event.start_at, format: :date
