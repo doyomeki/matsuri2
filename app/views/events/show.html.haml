@@ -1,6 +1,9 @@
 - model_class = Event
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.titleize
+%p
+  - @contents.each do |content|
+    = link_to content.title, event_contents_path(event_id: @event.id)
 
 %p
   %strong= model_class.human_attribute_name(:title) + ':'
