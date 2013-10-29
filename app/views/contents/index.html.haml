@@ -20,7 +20,7 @@
   %tbody
     - @contents.each do |content|
       %tr
-        %td= link_to content.id, content_path(content)
+        %td= content.id
         %td= content.event_id
         %td= content.booth_id
         %td= content.title
@@ -33,5 +33,3 @@
         %td= content.deleted_at
         %td=l content.created_at
         %td
-          = link_to t('.edit', :default => t("helpers.links.edit")), edit_content_path(content), :class => 'btn btn-mini'
-          = link_to t('.destroy', :default => t("helpers.links.destroy")), content_path(content), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'

@@ -1,10 +1,11 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:index]
 
   # GET /contents
   # GET /contents.json
   def index
-    @contents = Content.all
+    @contents = @event.contents
   end
 
   # GET /contents/1
@@ -65,6 +66,10 @@ class ContentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_content
       @content = Content.find(params[:id])
+    end
+
+    def set_event
+      @event = Event.find(params[:event_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

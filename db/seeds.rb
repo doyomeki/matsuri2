@@ -4,7 +4,7 @@ id = 1
 # Create Events
 Event.delete_all
 CSV.foreach('db/seeds/events.csv') do | row|
-  Event.create(id: id,title: row[0], description: row[1], capacity: row[2], place: row[3], start_at: row[4], finish_at: row[5])
+  Event.create(id: id,title: row[0], description: row[1], capacity: row[2], place: row[3], start_at: row[4], finish_at: row[5], upcoming: row[6])
 end
 
 # Create Contents

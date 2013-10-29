@@ -45,6 +45,9 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
+#
+# Use puma as the app server
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
