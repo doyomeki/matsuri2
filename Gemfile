@@ -57,6 +57,7 @@ gem 'puma'
 
 # Use 'HEROKU'
 gem 'heroku'
+gem 'foreman'
 
 # Use Haml for views
 gem 'haml-rails'
