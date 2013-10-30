@@ -8,6 +8,9 @@ ja:
         start_at: "開始時間"
         title: "イベント名"
         upcoming: "TOP"
+      user:
+        code: "社員番号（数字6桁）"
+        password: "パスワード"
     errors:
       template:
         header:

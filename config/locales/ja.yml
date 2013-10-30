@@ -19,11 +19,15 @@ ja:
       edit: "編集"
       cancel: "キャンセル"
       destroy: "削除"
+      login: "ログイン"
 
   flash:
     create_event: "イベントを作成しました。"
     update_event: "イベントを更新しました。"
     destroy_event: "イベントを削除しました。"
+
+  messages:
+    login: "ログインしてください。"
 
   devise:
     sessions:
