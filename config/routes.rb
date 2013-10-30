@@ -17,6 +17,7 @@ Matsuri2::Application.routes.draw do
   namespace :admin do
     resources :booths
     resources :events do
+      post "/set_upcoming" => "events#set_upcoming", on: :collection
       resources :contents
     end
   end
