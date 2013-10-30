@@ -2,34 +2,22 @@
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
 %table.table.table-striped
-  %thead
-    %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:event_id)
-      %th= model_class.human_attribute_name(:booth_id)
-      %th= model_class.human_attribute_name(:title)
-      %th= model_class.human_attribute_name(:description)
-      %th= model_class.human_attribute_name(:start_at)
-      %th= model_class.human_attribute_name(:finish_at)
-      %th= model_class.human_attribute_name(:speaker_name)
-      %th= model_class.human_attribute_name(:speaker_profile)
-      %th= model_class.human_attribute_name(:speaker_image)
-      %th= model_class.human_attribute_name(:deleted_at)
-      %th= model_class.human_attribute_name(:created_at)
-      %th=t '.actions', :default => t("helpers.actions")
-  %tbody
-    - @contents.each do |content|
+  - @contents.each do |content|
+    %thead
       %tr
-        %td= content.id
-        %td= content.event_id
-        %td= content.booth_id
-        %td= content.title
-        %td= content.description
-        %td= content.start_at
-        %td= content.finish_at
-        %td= content.speaker_name
-        %td= content.speaker_profile
-        %td= content.speaker_image
-        %td= content.deleted_at
-        %td=l content.created_at
+        %th{:colspan => 2}
+          = @booth.name
+    %tbody
+      %tr
         %td
+          %p
+            = image_tag(content.speaker_image)
+            = content.speaker_name
+          %p
+            = l content.start_at, format: :time
+            = '~'
+            = l content.finish_at, format: :time
+          %p= content.speaker_profile
+        %td
+          %p= content.title
+          %p= content.description
