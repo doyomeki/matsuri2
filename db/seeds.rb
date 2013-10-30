@@ -26,7 +26,7 @@ end
 id = 1
 User.delete_all
 CSV.foreach('db/seeds/users.csv') do | row|
-  User.create(id: id, email: row[0], password: row[1], admin: row[2], nickname: row[3])
+  User.create(id: id, email: row[0], password: row[1], admin: row[2], nickname: row[3], code: row[4])
   id += 1
 end
 
