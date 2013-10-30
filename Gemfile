@@ -112,6 +112,7 @@ group :development, :test do
   # static code analyzer
   gem 'rubocop', require: false
   # gem 'guard-rubocop'
+  gem 'dotenv-rails'
 
 end
 
@@ -123,3 +124,6 @@ gem 'devise'
 
 # Use Internationalize
 gem 'rails-i18n'
+
+# Use Paperclip with Dropbox storage
+gem 'paperclip-dropbox'
