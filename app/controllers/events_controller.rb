@@ -1,10 +1,14 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
-  # GET /events
-  # GET /events.json
   def index
     @events = Event.all
+    target_event = Event.find_upcoming
+    if target_event
+      redirect_to target_event
+    else
+      redirect_to Event.last unless Event.last.blank?
+    end
   end
 
   # GET /events/1

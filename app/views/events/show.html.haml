@@ -1,42 +1,23 @@
 - model_class = Event
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.titleize
-%p
-  - @contents.each do |content|
-    = link_to content.title, event_contents_path(event_id: @event.id)
+- @contents.each do |content|
+  = link_to content.title, event_contents_path(event_id: @event.id)
 
-%p
-  %strong= model_class.human_attribute_name(:title) + ':'
-  %br
-  = @event.title
-%p
-  %strong= model_class.human_attribute_name(:description) + ':'
-  %br
-  = @event.description
-%p
-  %strong= model_class.human_attribute_name(:capacity) + ':'
-  %br
-  = @event.capacity
-%p
-  %strong= model_class.human_attribute_name(:place) + ':'
-  %br
-  = @event.place
-%p
-  %strong= model_class.human_attribute_name(:start_at) + ':'
-  %br
-  = @event.start_at
-%p
-  %strong= model_class.human_attribute_name(:finish_at) + ':'
-  %br
-  = @event.finish_at
-%p
-  %strong= model_class.human_attribute_name(:deleted_at) + ':'
-  %br
-  = @event.deleted_at
-%p
-  %strong= model_class.human_attribute_name(:upcoming) + ':'
-  %br
-  = @event.upcoming
+.page-header
+  %h1= @event.title
+%p.description= @event.description
+%ul.event-info
+  %li
+    開催:
+    = l @event.start_at, format: :date
+    = l @event.start_at, format: :time
+    = "〜"
+    = l @event.finish_at, format: :time
+  %li
+    会場：
+    = @event.place
+  %li
+    定員：
+    = @event.capacity
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), events_path, :class => 'btn'
