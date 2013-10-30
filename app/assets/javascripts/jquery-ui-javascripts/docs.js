@@ -21,7 +21,7 @@
             }
         });
         // Buttons download
-        $('.download-btn').button();
+        // $('.download-btn').button();
 
         // make code pretty
         window.prettyPrint && prettyPrint();

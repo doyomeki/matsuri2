@@ -1,2 +1,4 @@
 jQuery ->
-  $(".to_button").button()
+  $(".to_button").button().click ->
+    $("label").text("×")
+    $("label[for=" + this.id + "]").text("○")
