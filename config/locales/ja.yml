@@ -24,3 +24,13 @@ ja:
     create_event: "イベントを作成しました。"
     update_event: "イベントを更新しました。"
     destroy_event: "イベントを削除しました。"
+
+  devise:
+    sessions:
+      signed_in: "ログインしました。"
+    registrations:
+      signed_up: "新規アカウントを作成しました。"
+    failure:
+      unauthenticated: "ログアウトしました。"
+      invalid: "ログインに失敗しました。"
+
