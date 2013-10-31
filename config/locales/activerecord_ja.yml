@@ -20,6 +20,7 @@ ja:
       user:
         code: "社員番号（数字6桁）"
         password: "パスワード"
+        remember_me: "保存する"
     errors:
       template:
         header:

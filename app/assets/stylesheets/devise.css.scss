@@ -1,0 +1,15 @@
+.remember_me {
+  display: block;
+  width: 80px;
+  .remember_me_checkbox {
+    float: left;
+  }
+  .remember_me_label {
+    float: right;
+    margin-top: 3px;
+  }
+}
+
+.float_clear {
+  clear: both;
+}

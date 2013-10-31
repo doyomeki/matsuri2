@@ -20,6 +20,7 @@ ja:
       cancel: "キャンセル"
       destroy: "削除"
       login: "ログイン"
+      sign_up: "アカウント登録"
 
   flash:
     create_event: "イベントを作成しました。"
@@ -28,6 +29,8 @@ ja:
 
   messages:
     login: "ログインしてください。"
+    sign_up: "新規アカウントの作成は、"
+    here: "コチラ"
 
   devise:
     sessions:
