@@ -8,9 +8,21 @@ ja:
         start_at: "開始時間"
         title: "イベント名"
         upcoming: "TOP"
+      content:
+        booth_id: "場所"
+        description: "説明"
+        finish_at: "終了時間"
+        start_at: "開始時間"
+        speaker_image: "スピーカー画像"
+        speaker_name: "スピーカー"
+        speaker_profile: "紹介"
+        title: "セッションタイトル"
       user:
         code: "社員番号（数字6桁）"
+        nickname: "ニックネーム"
         password: "パスワード"
+        password_confirmation: "パスワード（確認）"
+        remember_me: "保存する"
     errors:
       template:
         header:

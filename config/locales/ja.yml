@@ -20,6 +20,9 @@ ja:
       cancel: "キャンセル"
       destroy: "削除"
       login: "ログイン"
+      logout: "ログアウト"
+      sign_up: "新規登録"
+      admin: "管理"
 
   flash:
     create_event: "イベントを作成しました。"
@@ -28,6 +31,9 @@ ja:
 
   messages:
     login: "ログインしてください。"
+    sign_up: "各項目に値を入力してください。"
+    welcome: "ようこそ、"
+    mr: "さん"
 
   devise:
     sessions:
@@ -37,4 +43,3 @@ ja:
     failure:
       unauthenticated: "ログアウトしました。"
       invalid: "ログインに失敗しました。"
-
