@@ -31,7 +31,7 @@ ja:
     login: "ログインしてください。"
     sign_up_page: "新規アカウントの作成は、"
     here: "コチラ"
-    sign_up: "必須項目に値を入力してください。"
+    sign_up: "各項目に値を入力してください。"
 
   devise:
     sessions:
