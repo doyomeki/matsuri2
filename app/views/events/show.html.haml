@@ -19,5 +19,15 @@
     定員：
     = @event.capacity
 
+- @booths.each do |booth|
+  %ul
+    %li
+      時間:
+      = l booth.start_at
+    - @event.contents.find_all_by_start_at(booth.start_at).each do |content|
+      %li
+        = content.title
+        = content.speaker_name
+
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), events_path, :class => 'btn'
