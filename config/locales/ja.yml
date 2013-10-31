@@ -29,8 +29,9 @@ ja:
 
   messages:
     login: "ログインしてください。"
-    sign_up: "新規アカウントの作成は、"
+    sign_up_page: "新規アカウントの作成は、"
     here: "コチラ"
+    sign_up: "必須項目に値を入力してください。"
 
   devise:
     sessions:
