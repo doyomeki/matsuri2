@@ -1,3 +1,10 @@
+language: ruby
+rvm:
+- 2.0.0
+script:
+- cd matsuri2
+- bundle install --standalone --clean
+- bundle exec rake test
 notifications:
   hipchat:
     rooms:
