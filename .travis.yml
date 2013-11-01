@@ -8,6 +8,7 @@ env:
 script:
   - cd matsuri2
   - bundle install --standalone --clean
+  - RAILS_ENV=test bundle exec rake --trace db:create
   - RAILS_ENV=test bundle exec rake --trace db:migrate
   - bundle exec rake db:test:prepare
   - bundle exec rspec spec/
