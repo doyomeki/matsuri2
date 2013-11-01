@@ -12,6 +12,6 @@
  *= require_tree .
  */
 
-body {
+body.exist_current_user {
   background-image: url("retina_wood.png")
 }

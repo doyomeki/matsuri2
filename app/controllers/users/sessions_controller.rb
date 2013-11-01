@@ -1,4 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
+  layout "outside"
+
   def new
     super
   end
