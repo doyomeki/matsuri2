@@ -1,5 +1,5 @@
 .form-actions
-  = t("messages.login")
+  .message= t("messages.login")
 
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .control-group
@@ -12,12 +12,11 @@
     .controls
       = f.password_field :password
 
-  .control-group
+  .control-group.remember_me
     - if devise_mapping.rememberable?
-      = f.check_box :remember_me
-      = f.label :remember_me
+      .remember_me_checkbox= f.check_box :remember_me
+      .remember_me_label= f.label :remember_me
+  .float_clear
 
   .form-actions
     = f.submit t("helpers.links.login"), class: "btn"
-
-= render "users/shared/links"

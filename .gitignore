@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/vendor/bundle
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -16,3 +17,6 @@
 
 # Ignore database schema file.
 /db/schema.rb
+
+# Ignore deveopment config file.
+/env.development

@@ -1,0 +1,3 @@
+.form-actions
+  = render partial: "error_messages", locals: {errors: resource.errors} unless resource.errors.blank?
+  .message= t("messages.input")

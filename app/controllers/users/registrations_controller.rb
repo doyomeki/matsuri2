@@ -1,10 +1,16 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  layout "outside"
+
   def new
-     super
+    super
   end
 
   def create
     super
+  end
+
+  def edit
+    render layout: "application"
   end
 
   def sign_up_params

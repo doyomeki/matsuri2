@@ -8,6 +8,7 @@ class Content < ActiveRecord::Base
     :path => proc { |style| "#{style}/#{id}_#{image.original_filename}" }
   }
 
+  default_scope { order(:start_at) }
   belongs_to :event
   has_one :booth
   has_many :entries
