@@ -1,23 +1,27 @@
 - model_class = Content
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
-%table.table.table-striped
-  - @contents.each do |content|
-    %thead
-      %tr
-        %th{:colspan => 2}
-          = @booth.name
-    %tbody
-      %tr
-        %td
-          %p
-            = image_tag(content.speaker_image)
-            = content.speaker_name
-          %p
-            = l content.start_at, format: :time
-            = '~'
-            = l content.finish_at, format: :time
-          %p= content.speaker_profile
-        %td
-          %p= content.title
-          %p= content.description
+- @contents.each do |content|
+  - @booth = Booth.find(content.booth_id)
+  %div{id: "#{content.id}"}
+    %table.table.table-striped
+      !!!.content{id: "#{content.id}"}
+      !!!%thead{id: "#{content.id}"}
+      %thead
+        %tr
+          %th{:colspan => 2}
+            = @booth.name
+      %tbody
+        %tr
+          %td
+            %p
+              = image_tag(content.speaker_image)
+              = content.speaker_name
+            %p
+              = l content.start_at, format: :time
+              = '~'
+              = l content.finish_at, format: :time
+            %p= content.speaker_profile
+          %td
+            %p= content.title
+            %p= content.description

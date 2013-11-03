@@ -1,6 +1,6 @@
 - model_class = Event
 - @contents.each do |content|
-  = link_to content.title, event_contents_path(event_id: @event.id)
+  = link_to content.title, event_contents_path(anchor: content.id,event_id: @event.id)
 
 .page-header
   %h1= @event.title
