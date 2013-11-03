@@ -5,8 +5,6 @@
   - @booth = Booth.find(content.booth_id)
   %div{id: "#{content.id}"}
     %table.table.table-striped
-      !!!.content{id: "#{content.id}"}
-      !!!%thead{id: "#{content.id}"}
       %thead
         %tr
           %th{:colspan => 2}
@@ -15,7 +13,7 @@
         %tr
           %td
             %p
-              = image_tag(content.speaker_image)
+              = image_tag(content.speaker_image_file_name)
               = content.speaker_name
             %p
               = l content.start_at, format: :time
