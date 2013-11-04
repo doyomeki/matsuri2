@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe BoothsController do
+describe Admin::BoothsController do
   describe "routing" do
 
     it "routes to #index" do
