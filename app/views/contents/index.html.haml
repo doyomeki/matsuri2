@@ -11,7 +11,7 @@
             = @booth.name
       %tbody
         %tr
-          %td
+          %td{width: "50%"}
             %p
               = content.speaker_name
             %p
@@ -19,6 +19,6 @@
               = '~'
               = l content.finish_at, format: :time
             %p= content.speaker_profile
-          %td
+          %td{width: "50%"}
             %p= content.title
             %p= content.description
