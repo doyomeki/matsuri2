@@ -14,8 +14,8 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @booths = @event.contents.group(:start_at)
-  	@contents = @event.contents
+    @times = @event.contents.group(:start_at)
+    @contents = @event.contents
   end
 
   # GET /events/new

@@ -1,9 +1,10 @@
-- @booths.each do |booth|
+- @times.each do |time|
   %ul
     %li
       時間:
-      = l booth.start_at
-    - @event.contents.find_all_by_start_at(booth.start_at).each do |content|
+      = l time.start_at
+    - @event.contents.find_all_by_start_at(time.start_at).each do |content|
       %li
         = content.title
         = link_to content.speaker_name, event_contents_path(anchor: content.id,event_id: @event.id)
+        = content.booth.name

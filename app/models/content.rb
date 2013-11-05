@@ -10,6 +10,6 @@ class Content < ActiveRecord::Base
 
   default_scope { order(:start_at) }
   belongs_to :event
-  has_one :booth
+  belongs_to :booth
   has_many :entries
 end
