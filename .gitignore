@@ -19,4 +19,4 @@
 /db/schema.rb
 
 # Ignore deveopment config file.
-/env.development
+/.env.development
