@@ -2,13 +2,12 @@
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
 - @contents.each do |content|
-  - @booth = Booth.find(content.booth_id)
   %div{id: "#{content.id}"}
     %table.table.table-striped
       %thead
         %tr
           %th{:colspan => 2}
-            = @booth.name
+            = content.booth.name
       %tbody
         %tr
           %td{width: "50%"}
