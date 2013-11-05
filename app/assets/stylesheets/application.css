@@ -13,5 +13,9 @@
  */
 
 body.exist_current_user {
-  background-image: url("retina_wood.png")
+  background-image: url("retina_wood.png");
+}
+
+#time_table {
+  background-image: url("grey_wash_wall.png");
 }

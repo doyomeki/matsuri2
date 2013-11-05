@@ -1,7 +1,6 @@
 - model_class = Event
 
-.page-header
-  %h1= @event.title
+%h1= @event.title
 %p.description= @event.description
 %ul.event-info
   %li
@@ -17,15 +16,5 @@
     定員：
     = @event.capacity
 
-- @booths.each do |booth|
-  %ul
-    %li
-      時間:
-      = l booth.start_at
-    - @event.contents.find_all_by_start_at(booth.start_at).each do |content|
-      %li
-        = content.title
-        = link_to content.speaker_name, event_contents_path(anchor: content.id,event_id: @event.id)
-
-.form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), events_path, :class => 'btn'
+- content_for :time_table do
+  = render "time_table"
