@@ -49,6 +49,7 @@ end
 # Use puma as the app server
 gem 'puma'
 
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
@@ -103,7 +104,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-coolline'
   gem 'pry-debugger'
-  gem 'pry-debugger'
   gem 'awesome_print'
 
   gem 'hirb'
@@ -114,6 +114,7 @@ group :development, :test do
   gem 'rubocop', require: false
   # gem 'guard-rubocop'
   gem 'dotenv-rails'
+  gem 'quiet_assets'
 
 end
 
@@ -128,3 +129,5 @@ gem 'rails-i18n'
 
 # Use Paperclip with Dropbox storage
 gem 'paperclip-dropbox'
+
+gem 'colorize_unpermitted_parameters'

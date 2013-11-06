@@ -5,8 +5,9 @@ class Content < ActiveRecord::Base
     :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
     :styles => { :medium => "300x300", :thumb => "100x100" },
     :dropbox_options => {
-    :path => proc { |style| "#{style}/#{id}_#{image.original_filename}" }
+      :path => proc { |style| "#{style}/#{id}_#{speaker_image.original_filename}" }
   }
+  validates_presence_of :speaker_image
 
   default_scope { order(:start_at) }
   belongs_to :event

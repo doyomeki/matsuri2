@@ -1,29 +1,29 @@
-- model_class = Content
-%table.table
-  = form_for ['admin', @event, @event.contents.build] do |f|
-    %tr
-      %th= model_class.human_attribute_name(:title)
-      %td= f.text_field :title
-    %tr
-      %th= model_class.human_attribute_name(:booth_id)
-      %td= "ドロップダウンリスト"
-    %tr
-      %th= model_class.human_attribute_name(:start_at)
-      %td= "時間"
-    %tr
-      %th= model_class.human_attribute_name(:finish_at)
-      %td= "時間"
-    %tr
-      %th= model_class.human_attribute_name(:speaker_image)
-      %td= "Image"
-    %tr
-      %th= model_class.human_attribute_name(:description)
-      %td= f.text_area :description
-    %tr
-      %th= model_class.human_attribute_name(:speaker_name)
-      %td= f.text_field :speaker_name
-    %tr
-      %th= model_class.human_attribute_name(:speaker_profile)
-      %td= f.text_field :speaker_profile
-    %tr
-      %td= f.submit class: "btn"
+.control-group
+  = f.label :title, :class => 'control-label'
+  .controls
+    = f.text_field :title, :class => 'text_field'
+.control-group
+  = f.label :start_at, :class => 'control-label'
+  .controls
+    .date_time= f.datetime_select :start_at, datetime_separator: "  ", use_month_numbers: true
+.control-group
+  = f.label :finish_at, :class => 'control-label'
+  .controls
+    .date_time= f.datetime_select :finish_at, datetime_separator: "  ", use_month_numbers: true
+.control-group
+  = f.label :speaker_image, :class => 'control-label'
+  .controls
+    = f.file_field :speaker_image
+  = image_tag @event.contents.find(params[:id]).speaker_image.url
+.control-group
+  = f.label :description, :class => 'control-label'
+  .controls
+    = f.text_area :description, class: "span5", rows: "5"
+.control-group
+  = f.label :speaker_name, :class => 'control-label'
+  .controls
+    = f.text_field :speaker_name, :class => 'text_field'
+.control-group
+  = f.label :speaker_profile, :class => 'control-label'
+  .controls
+    = f.text_field :speaker_profile, :class => 'text_field'
