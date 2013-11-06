@@ -7,7 +7,6 @@ class Content < ActiveRecord::Base
     :dropbox_options => {
       :path => proc { |style| "#{style}/#{id}_#{speaker_image.original_filename}" }
   }
-  validates_presence_of :speaker_image
 
   default_scope { order(:start_at) }
   belongs_to :event
