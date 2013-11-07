@@ -1,10 +1,13 @@
-- @times.each do |time|
-  %ul
-    %li
-      時間:
-      = l time.start_at
-    - @event.contents.find_all_by_start_at(time.start_at).each do |content|
-      %li
-        = content.title
-        = link_to content.speaker_name, event_contents_path(anchor: content.id,event_id: @event.id)
-        = content.booth.name
+%div.container
+  %table.table.table-hover
+    - @times.each do |time|
+      %tr
+        %td
+          %span.glyphicon.glyphicon-time
+          = l time.start_at
+      %tr
+        - @event.contents.find_all_by_start_at(time.start_at).each do |content|
+          %td.col-md-6
+            = content.title
+            = link_to content.speaker_name, event_contents_path(anchor: content.id,event_id: @event.id)
+            = content.booth.name
