@@ -19,7 +19,3 @@ body.exist_current_user {
 #time_table {
   background-image: url("grey_wash_wall.png");
 }
-
-body.outside {
-  padding-top: 60px;
-}

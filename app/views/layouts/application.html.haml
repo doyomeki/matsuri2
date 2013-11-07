@@ -17,7 +17,7 @@
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
 
-  %body.exist_current_user
+  %body{class: current_user ? "exist_current_user" : "outside"}
     .navbar.navbar-fluid-top
       .navbar-inner
         .container
