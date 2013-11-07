@@ -32,8 +32,9 @@
                 %i.icon-user
               %li= link_to current_user.nickname, edit_user_registration_path, class: "navbar-link"
               %li
-                %i.icon-cog
-              %li= link_to t("helpers.links.admin"), admin_events_path if current_user.admin
+                - if current_user.admin
+                  %i.icon-cog
+                  %li= link_to t("helpers.links.admin"), admin_events_path 
               %li
                 %i.icon-leaf
               %li= link_to t("helpers.links.logout"), destroy_user_session_path, method: :delete, :class => 'navbar-link'
