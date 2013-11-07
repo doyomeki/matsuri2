@@ -1,13 +1,19 @@
 %div.container
-  %table.table.table-hover
-    - @times.each do |time|
-      %tr
-        %td
-          %span.glyphicon.glyphicon-time
-          = l time.start_at
-      %tr
-        - @event.contents.find_all_by_start_at(time.start_at).each do |content|
-          %td.col-md-6
-            = content.title
-            = link_to content.speaker_name, event_contents_path(anchor: content.id,event_id: @event.id)
+  - @times.each do |time|
+    %div.row.span12
+      %i.icon-time
+      = l time.start_at
+      ～
+      = l time.finish_at
+    - @event.contents.find_all_by_start_at(time.start_at).each do |content|
+      %div.span6
+        %div.row-fluid
+          %div.span5
             = content.booth.name
+        %div.row.fluid
+          %div.span2
+            ここにイメージをいれたい
+          %div.span3.fluid
+            = content.title
+            %br
+            = link_to content.speaker_name, event_contents_path(anchor: content.id,event_id: @event.id)
