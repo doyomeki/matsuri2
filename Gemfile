@@ -59,8 +59,7 @@ gem 'puma'
 # Use 'HEROKU'
 gem 'heroku'
 gem 'foreman'
-gem 'rails_12factor', group: :production
-
+gem 'rails_12factor'
 # Use Haml for views
 gem 'haml-rails'
 gem 'erb2haml'
