@@ -28,16 +28,24 @@
           .container.nav-collapse
             %ul.nav
               %li= link_to "Matsuri", root_path
-              %li
-                %i.icon-user
-              %li= link_to current_user.nickname, edit_user_registration_path, class: "navbar-link"
-              %li
-                - if current_user.admin
-                  %i.icon-cog
-                  %li= link_to t("helpers.links.admin"), admin_events_path 
+              - if current_user
+                %li
+                  %i.icon-user
+                  %li= link_to current_user.nickname, edit_user_registration_path, class: "navbar-link"
+                %li
+                  - if current_user.admin
+                    %i.icon-cog
+                    %li= link_to t("helpers.links.admin"), admin_events_path 
+              - else
+                %li
+                  %i.icon-bookmark
+                  %li= link_to t("helpers.links.sign_up"), new_user_registration_path, class: "navbar-link"
               %li
                 %i.icon-leaf
-              %li= link_to t("helpers.links.logout"), destroy_user_session_path, method: :delete, :class => 'navbar-link'
+                - if current_user
+                  %li= link_to t("helpers.links.logout"), destroy_user_session_path, method: :delete, class: "navbar-link"
+                - else
+                  %li= link_to t("helpers.links.login"), new_user_session_path, class: "navbar-link"
     .container
       .row
         .span12
