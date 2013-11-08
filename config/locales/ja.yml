@@ -33,8 +33,7 @@ ja:
   messages:
     login: "ログインしてください。"
     input: "各項目に値を入力してください。"
-    welcome: "ようこそ、"
-    mr: "さん"
+    sign_up: "各項目に値を入力し、新規アカウントを作成してください。"
 
   devise:
     sessions:

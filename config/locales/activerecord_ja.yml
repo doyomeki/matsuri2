@@ -19,6 +19,7 @@ ja:
         title: "セッションタイトル"
       user:
         code: "社員番号（数字6桁）"
+        current_password: "現在のパスワード"
         nickname: "ニックネーム"
         password: "パスワード"
         password_confirmation: "パスワード（確認）"
