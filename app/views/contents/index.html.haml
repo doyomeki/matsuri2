@@ -9,7 +9,7 @@
             = content.booth.name
       %tbody
         %tr
-          %td.speaker-profile
+          %td.speaker-profile.content-body
             %div.row-fluid
               %div.span4
                 = image_tag(content.speaker_image.url, class: "img-rounded")
@@ -23,8 +23,9 @@
                     = l content.start_at, format: :time
                     = '~'
                     = l content.finish_at, format: :time
-            %div=content.speaker_profile
-          %td
+            %div
+              %br=content.speaker_profile
+          %td.content-body
             %p
               %font{size: "5"}= content.title
             %p
