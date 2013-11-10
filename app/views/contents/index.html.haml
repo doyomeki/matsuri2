@@ -1,23 +1,31 @@
 - model_class = Content
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
 - @contents.each do |content|
-  %div{id: "#{content.id}"}
+  %div{id: "#{content.id}", class: "span12"}
     %table.table.table-striped
       %thead
         %tr
-          %th{:colspan => 2}
+          %th.content-header{colspan: "2"}
             = content.booth.name
       %tbody
         %tr
-          %td{width: "50%"}
+          %td.speaker-profile
+            %div.row-fluid
+              %div.span4
+                = image_tag(content.speaker_image.url, class: "img-rounded")
+              %div.span8.speaker-name
+                %p
+                  %font{size: "5", face: "Hiragino Kaku Gothic Pro"}
+                    %b=content.speaker_name
+                %p
+                  %a{href: "/events/1/"} 
+                    %i.icon-time
+                    = l content.start_at, format: :time
+                    = '~'
+                    = l content.finish_at, format: :time
+            %div=content.speaker_profile
+          %td
             %p
-              = content.speaker_name
+              %font{size: "5"}= content.title
             %p
-              = l content.start_at, format: :time
-              = '~'
-              = l content.finish_at, format: :time
-            %p= content.speaker_profile
-          %td{width: "50%"}
-            %p= content.title
-            %p= content.description
+              %font{size: "3"}= content.description
