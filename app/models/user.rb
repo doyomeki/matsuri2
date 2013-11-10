@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, authentication_keys: [:code]
 
-  validates :code, uniqueness: true, presence: true
-  validates :nickname, :password, presence: true
+  validates :code, uniqueness: true, presence: true, length: { maximum: 6 }, numericality: true
+  validates :nickname, presence: true
+  validates :password, confirmation: true, length: { within: 4..32 }
 
   belongs_to :user
   has_many :entries
