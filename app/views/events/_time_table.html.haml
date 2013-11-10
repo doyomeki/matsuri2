@@ -1,19 +1,21 @@
 %div.container
   - @times.each do |time|
-    %div.row.span12
-      %i.icon-time
-      = l time.start_at
-      ～
-      = l time.finish_at
-    - @event.contents.find_all_by_start_at(time.start_at).each do |content|
-      %div.span6
-        %div.row-fluid
-          %div.span5
+    %div.row-fluid
+      %div.span12
+        %h2.timezone
+          %i.icon-time
+          = l time.start_at
+          ～
+          = l time.finish_at
+    %div.row-fluid
+      - @event.contents.find_all_by_start_at(time.start_at).each do |content|
+        %div.span6
+          %h3.boothname
             = content.booth.name
-        %div.row.fluid
-          %div.span2
-            ここにイメージをいれたい
-          %div.span3.fluid
-            = content.title
-            %br
-            = link_to content.speaker_name, event_contents_path(anchor: content.id,event_id: @event.id)
+          %div.row-fluid.content
+            %div.span6
+              = image_tag(content.speaker_image.url)
+            %div.span6
+              %h4
+                = content.title
+              = link_to content.speaker_name, event_contents_path(anchor: content.id,event_id: @event.id)
