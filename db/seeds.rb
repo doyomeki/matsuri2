@@ -23,11 +23,13 @@ CSV.foreach('db/seeds/contents.csv') do | row|
 end
 
 # Create Users
-id = 1
-User.delete_all
-CSV.foreach('db/seeds/users.csv') do | row|
-  User.create(id: id, password: row[0], admin: row[1], nickname: row[2], code: row[3])
-  id += 1
+if Rails.env.development?
+  id = 1
+  User.delete_all
+  CSV.foreach('db/seeds/users.csv') do | row|
+    User.create(id: id, password: row[0], admin: row[1], nickname: row[2], code: row[3])
+    id += 1
+  end
 end
 
 # Create Entries
