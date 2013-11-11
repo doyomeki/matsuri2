@@ -46,10 +46,8 @@
                   %li= link_to t("helpers.links.logout"), destroy_user_session_path, method: :delete, class: "navbar-link"
                 - else
                   %li= link_to t("helpers.links.login"), new_user_session_path, class: "navbar-link"
-    .container
+    .container.pull-left
       .row
         .span12
           = yield
     = yield :time_table
-  %footer
-    %center CopyCopyright© TISMatsuri 2013 All Rights Reserved.
