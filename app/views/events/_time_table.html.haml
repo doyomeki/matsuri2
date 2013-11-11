@@ -17,5 +17,5 @@
               = image_tag(content.speaker_image.url)
             %div.span6
               %h4
-                = content.title
-              = link_to content.speaker_name, event_contents_path(anchor: content.id,event_id: @event.id)
+                = link_to content.title, event_contents_path(anchor: content.id,event_id: @event.id)
+              = content.speaker_name
