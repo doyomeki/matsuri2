@@ -14,7 +14,7 @@
   = f.label :speaker_image, :class => 'control-label'
   .controls
     = f.file_field :speaker_image
-  = image_tag @event.contents.find(params[:id]).speaker_image.url
+  = image_tag @event.contents.find(params[:id]).speaker_image.url(:thumb)
 .control-group
   = f.label :description, :class => 'control-label'
   .controls
