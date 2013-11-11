@@ -4,7 +4,7 @@ class Content < ActiveRecord::Base
     :storage => :dropbox,
     :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
     :styles => { :medium => "300x300", :thumb => "100x100" },
-    :default_url => "https://dl.dropboxusercontent.com/u/186096083/original/octocat_cat.png",
+    :default_url => "https://dl.dropboxusercontent.com/u/186096083/original/NO_IMAGE.png",
     :dropbox_options => {
       :path => proc { |style| "#{style}/#{id}_#{speaker_image.original_filename}" }
   }
