@@ -31,7 +31,7 @@
 %p
   %strong= model_class.human_attribute_name(:speaker_image) + ':'
   %br
-  = image_tag @content.speaker_image.url
+  = image_tag @content.speaker_image.url(:thumb)
 
 .form-actions
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_event_content_path(event_id: @content.event_id, id: @content.id), :class => 'btn btn-mini'
