@@ -1,6 +1,6 @@
 .form-actions
   .message= t("messages.input")
-  = render partial: "error_messages", locals: {errors: resource.errors} unless resource.errors.blank?
+  = render partial: "error_messages", locals: {errors: @user.errors} unless @user.errors.blank?
 
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   .control-group
