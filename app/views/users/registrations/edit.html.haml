@@ -1,10 +1,10 @@
 .form-actions
-  = render partial: "error_messages", locals: {errors: resource.errors} unless resource.errors.blank?
   .message= t("messages.input")
+  = render partial: "error_messages", locals: {errors: resource.errors} unless resource.errors.blank?
 
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   .control-group
-    = f.label :nickname
+    = f.label :nickname, class: "control-label"
     .controls
       = f.text_field :nickname
 
@@ -16,7 +16,7 @@
   .control-group
     = f.label :current_password
     .controls
-      = f.text_field :current_password
+      = f.password_field :current_password
 
   .control-group
     = f.label :password
