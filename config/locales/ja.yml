@@ -34,12 +34,3 @@ ja:
     login: "ログインしてください。"
     input: "各項目に値を入力してください。"
     sign_up: "各項目に値を入力し、新規アカウントを作成してください。"
-
-  devise:
-    sessions:
-      signed_in: "ログインしました。"
-    registrations:
-      signed_up: "新規アカウントを作成しました。"
-    failure:
-      unauthenticated: "エラーが発生しました。"
-      invalid: "ログインに失敗しました。"

@@ -47,7 +47,8 @@
                 - else
                   %li= link_to t("helpers.links.login"), new_user_session_path, class: "navbar-link"
     .container
-      .row
+      .row-fluid
         .span12
+          = bootstrap_flash
           = yield
     = yield :time_table

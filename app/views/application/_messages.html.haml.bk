@@ -1,0 +1,15 @@
+- unless errors.blank?
+  - message = t("activerecord.errors.template.header.other", count: errors.count)
+  - message << "<ul>"
+  - errors.full_messages.each do |msg|
+    - message << "<li>#{msg}</li>"
+
+- unless errors.is_a?(Array)
+  - message = t("activerecord.errors.template.header.other", count: errors.count)
+  - message << "<ul>"
+
+  - errors.full_messages.each do |msg|
+    - message << "<li>#{msg}</li>"
+
+- flash[:error] = message
+= bootstrap_flash
