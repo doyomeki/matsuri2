@@ -4,9 +4,9 @@
       %div.span12
         %h2.timezone
           %i.icon-time
-          = l time.start_at
+          = time.start_at.strftime("%H:%M")
           ～
-          = l time.finish_at
+          = time.finish_at.strftime("%H:%M")
     %div.row-fluid
       - @event.contents.find_all_by_start_at(time.start_at).each do |content|
         %div.span6
