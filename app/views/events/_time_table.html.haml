@@ -18,4 +18,4 @@
             %div.span6.title
               %h4
                 = link_to content.title, event_contents_path(anchor: content.id,event_id: @event.id)
-              = content.speaker_name
+              = simple_format content.speaker_name
