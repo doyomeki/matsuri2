@@ -4,9 +4,9 @@
       %div.span12
         %h2.timezone
           %i.icon-time
-          = l time.start_at
+          = time.start_at.strftime("%H:%M")
           ～
-          = l time.finish_at
+          = time.finish_at.strftime("%H:%M")
     %div.row-fluid
       - @event.contents.find_all_by_start_at(time.start_at).each do |content|
         %div.span6
@@ -14,7 +14,7 @@
             = content.booth.name
           %div.row-fluid.content
             %div.span6
-              = image_tag(content.speaker_image.url)
+              = image_tag(content.speaker_image.url, size:"150x150", class:"image_rounded")
             %div.span6
               %h4
                 = link_to content.title, event_contents_path(anchor: content.id,event_id: @event.id)
