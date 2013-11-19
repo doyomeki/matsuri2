@@ -16,18 +16,21 @@ CSV.foreach('db/seeds/booths.csv') do | row|
 end
 
 # Create Contents
+id = 1
 Content.delete_all
 CSV.foreach('db/seeds/contents.csv') do | row|
-  Content.create(id: id, event_id: row[0], booth_id: row[1], title: row[2], description: row[3], start_at: row[4], finish_at: row[5], speaker_name: row[6], speaker_profile: row[7])
+  Content.create(id: id, event_id: row[0], booth_id: row[1], title: row[2], description: row[3], start_at: row[4], finish_at: row[5], speaker_name: row[6], speaker_profile: row[7], speaker_image_file_name: row[8], speaker_image_content_type: row[9], speaker_image_file_size: row[10])
   id += 1
 end
 
 # Create Users
-id = 1
-User.delete_all
-CSV.foreach('db/seeds/users.csv') do | row|
-  User.create(id: id, email: row[0], password: row[1], admin: row[2], nickname: row[3], code: row[4])
-  id += 1
+if Rails.env.development?
+  id = 1
+  User.delete_all
+  CSV.foreach('db/seeds/users.csv') do | row|
+    User.create(id: id, password: row[0], admin: row[1], nickname: row[2], code: row[3])
+    id += 1
+  end
 end
 
 # Create Entries

@@ -1,6 +1,7 @@
+- flash[:error] = devise_error_messages!
+
 .form-actions
   .message= t("messages.sign_up")
-  = render partial: "error_messages", locals: {errors: resource.errors} unless resource.errors.blank?
 
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   .control-group

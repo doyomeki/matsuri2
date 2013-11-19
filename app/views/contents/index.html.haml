@@ -9,22 +9,23 @@
             = content.booth.name
       %tbody
         %tr
-          %td.speaker-profile
+          %td.speaker-profile.content-body
             %div.row-fluid
               %div.span4
                 = image_tag(content.speaker_image.url, class: "img-rounded")
               %div.span8.speaker-name
                 %p
                   %font{size: "5", face: "Hiragino Kaku Gothic Pro"}
-                    %b=content.speaker_name
+                    %b= simple_format content.speaker_name
                 %p
                   %a{href: "/events/1/"} 
                     %i.icon-time
                     = l content.start_at, format: :time
                     = '~'
                     = l content.finish_at, format: :time
-            %div=content.speaker_profile
-          %td
+            %div
+              %br=content.speaker_profile
+          %td.content-body
             %p
               %font{size: "5"}= content.title
             %p

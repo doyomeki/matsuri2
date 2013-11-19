@@ -4,9 +4,9 @@
 
 .table th.content-header {
     background-color: rgba(60,179,113,0.8);
-	padding: 0px 8px 0px;
+	padding: 5px 8px;
 	color: #FFFFFF;
-	margin: 100px 0px 0px;
+	margin: 10px 0px 0px;
 }
 
 .speaker-profile {
@@ -16,4 +16,8 @@
 .speaker-name {
 	font-size: 5;
 	font-style: "Hiragino Kaku Gothic Pro";
+}
+
+.table td.content-body {
+    padding: 20px;
 }
