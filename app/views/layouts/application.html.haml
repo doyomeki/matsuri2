@@ -49,6 +49,7 @@
     .container
       .row-fluid
         .span12
+          = render partial: "admin_menu" if current_user and current_user.admin
           = bootstrap_flash
           = yield
     = yield :time_table
