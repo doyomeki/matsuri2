@@ -1,32 +1,24 @@
 - model_class = Event
 %p
   %strong= model_class.human_attribute_name(:title) + ':'
-  %br
   = @event.title
 %p
   %strong= model_class.human_attribute_name(:description) + ':'
-  %br
   = @event.description
 %p
   %strong= model_class.human_attribute_name(:capacity) + ':'
-  %br
   = @event.capacity
 %p
   %strong= model_class.human_attribute_name(:place) + ':'
-  %br
   = @event.place
 %p
   %strong= model_class.human_attribute_name(:start_at) + ':'
-  %br
   = @event.start_at
 %p
   %strong= model_class.human_attribute_name(:finish_at) + ':'
-  %br
   = @event.finish_at
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), admin_events_path, :class => 'btn'
 
-= render "admin/contents/form"
-%br
-= render partial: @event.contents
+= render partial: @event.contents, spacer_template: "admin/contents/separator"

@@ -14,7 +14,7 @@
         %td
           = radio_button :event, "upcoming", event.id, id: event.id, class: "to_button", checked: event.upcoming ? "checked" : ""
           = label :event, event.upcoming ? "○" : "×", for: event.id
-        %td= link_to event.title, admin_event_path(event)
+        %td= link_to event.title, ['admin', event]
         %td= event.place
         %td= l event.start_at, format: :date
         %td

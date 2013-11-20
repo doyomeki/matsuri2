@@ -1,5 +1,6 @@
 .form-actions
   .message= t("messages.login")
+  .message= t("messages.login_password")
 
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .control-group

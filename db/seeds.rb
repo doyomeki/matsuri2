@@ -19,7 +19,7 @@ end
 id = 1
 Content.delete_all
 CSV.foreach('db/seeds/contents.csv') do | row|
-  Content.create(id: id, event_id: row[0], booth_id: row[1], title: row[2], description: row[3], start_at: row[4], finish_at: row[5], speaker_name: row[6], speaker_profile: row[7], speaker_image_file_name: row[8], speaker_image_content_type: row[9], speaker_image_file_size: row[10])
+  Content.create(id: id, event_id: row[0], booth_id: row[1], title: row[2], description: row[3], start_at: row[4], finish_at: row[5], speaker_name: row[6], speaker_profile: row[7], speaker_image_file_name: row[8], speaker_image_content_type: row[9], speaker_image_file_size: row[10], content_image_path: row[11])
   id += 1
 end
 

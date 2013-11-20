@@ -13,9 +13,15 @@
           %h3.boothname
             = content.booth.name
           %div.row-fluid.content
+<<<<<<< HEAD
             %div.span6.image
               = image_tag(content.speaker_image.url, size:"150x150", class:"image_rounded")
             %div.span6.title
+=======
+            %div.span6
+              = image_tag(content.content_image_path, size:"150x150", class:"image_rounded")
+            %div.span6
+>>>>>>> 12e562463b7e3127a0fe8e8b47c87a1f3002efd5
               %h4
                 = link_to content.title, event_contents_path(anchor: content.id,event_id: @event.id)
               = simple_format content.speaker_name
