@@ -20,5 +20,6 @@ Matsuri2::Application.routes.draw do
       post "/set_upcoming" => "events#set_upcoming", on: :collection
       resources :contents
     end
+    resources :users
   end
 end
