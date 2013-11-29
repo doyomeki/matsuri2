@@ -1,18 +1,22 @@
 require "csv"
 
-id = 1
 # Create Events
-Event.delete_all
-CSV.foreach('db/seeds/events.csv') do | row|
-  Event.create(id: id,title: row[0], description: row[1], capacity: row[2], place: row[3], start_at: row[4], finish_at: row[5], upcoming: row[6])
+if Rails.env.development?
+  id = 1
+  Event.delete_all
+  CSV.foreach('db/seeds/events.csv') do | row|
+    Event.create(id: id,title: row[0], description: row[1], capacity: row[2], place: row[3], start_at: row[4], finish_at: row[5], upcoming: row[6])
+  end
 end
 
-# Create Booths
-id = 1
-Booth.delete_all
-CSV.foreach('db/seeds/booths.csv') do | row|
-  Booth.create(id: id, name: row[0], capacity: row[1])
-  id += 1
+## Create Booths
+if Rails.env.development?
+  id = 1
+  Booth.delete_all
+  CSV.foreach('db/seeds/booths.csv') do | row|
+    Booth.create(id: id, name: row[0], capacity: row[1])
+    id += 1
+  end
 end
 
 # Create Contents
@@ -23,7 +27,7 @@ CSV.foreach('db/seeds/contents.csv') do | row|
   id += 1
 end
 
-# Create Users
+## Create Users
 if Rails.env.development?
   id = 1
   User.delete_all
@@ -33,10 +37,12 @@ if Rails.env.development?
   end
 end
 
-# Create Entries
-id = 1
-Entry.delete_all
-CSV.foreach('db/seeds/entries.csv') do | row|
-  Entry.create(id: id, content_id: row[0], user_id: row[1])
-  id += 1
+## Create Entries
+if Rails.env.development?
+  id = 1
+  Entry.delete_all
+  CSV.foreach('db/seeds/entries.csv') do | row|
+    Entry.create(id: id, content_id: row[0], user_id: row[1])
+    id += 1
+  end
 end
