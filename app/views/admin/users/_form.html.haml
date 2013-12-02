@@ -1,0 +1,23 @@
+= form_for ["admin", @user], :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :nickname, class: "control-label"
+    .controls
+      = f.text_field :nickname
+
+  .control-group
+    = f.label :code, class: "control-label"
+    .controls
+      = f.text_field :code
+
+  .control-group
+    = f.label :password, class: "control-label"
+    .controls
+      = f.password_field :password
+
+  .control-group
+    = f.label :admin, class: "control-label"
+    .controls
+      = f.check_box :admin
+
+  .form-actions
+    = f.submit class: "btn"
