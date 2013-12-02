@@ -14,6 +14,10 @@ Matsuri2::Application.routes.draw do
     resources :contents, only: [:index, :show]
   end
 
+  resources :entries do
+    post "/insert_and_delete" => "entries#insert_and_delete", on: :collection
+  end
+
   namespace :admin do
     resources :booths
     resources :events do
@@ -21,4 +25,5 @@ Matsuri2::Application.routes.draw do
       resources :contents
     end
   end
+
 end
