@@ -3,24 +3,24 @@
 .form-actions
   .message= t("messages.sign_up")
 
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+= form_for(resource, html: { class: "form-horizontal" }, as: resource_name, url: registration_path(resource_name)) do |f|
   .control-group
-    = f.label :nickname
+    = f.label :nickname, class: "control-label"
     .controls
       = f.text_field :nickname
 
   .control-group
-    = f.label :code
+    = f.label :code, class: "control-label"
     .controls
       = f.text_field :code
 
   .control-group
-    = f.label :password
+    = f.label :password, class: "control-label"
     .controls
       = f.password_field :password
 
   .control-group
-    = f.label :password_confirmation
+    = f.label :password_confirmation, class: "control-label"
     .controls
       = f.password_field :password_confirmation 
 
