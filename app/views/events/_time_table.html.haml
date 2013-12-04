@@ -15,7 +15,7 @@
             = link_to "参加", insert_and_delete_entries_path(content_id: content.id, user_id: current_user.id), method: :post, :class => 'btn'
           %div.row-fluid.content
             %div.span6.image
-              = image_tag(content.speaker_image.url, size:"150x150", class:"image_rounded")
+              = image_tag(content.speaker_image.url, class: "img-rounded")
             %div.span6.title
               %h4
                 = link_to content.title, event_contents_path(anchor: content.id,event_id: @event.id)
