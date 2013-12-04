@@ -5,6 +5,7 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
   def index
+    binding.pry 
     @contents = @event.contents
   end
 
