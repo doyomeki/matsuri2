@@ -1,7 +1,7 @@
 - model_class = Content
 %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
 - @contents.each do |content|
-  %div{id: "#{content.id}", class: "span12"}
+  %div{id: "#{content.id}"}
     %table.table.table-striped
       %thead
         %tr
@@ -10,21 +10,20 @@
       %tbody
         %tr
           %td.speaker-profile.content-body
-            %div.row-fluid
-              %div.span4
-                = image_tag(content.content_image_path, class: "img-rounded")
-              %div.span8.speaker-name
-                %p
-                  %font{size: "5", face: "Hiragino Kaku Gothic Pro"}
-                    %b= simple_format content.speaker_name
-                %p
-                  %a{href: "/events/1/"} 
-                    %i.icon-time
-                    = l content.start_at, format: :time
-                    = '~'
-                    = l content.finish_at, format: :time
+            = image_tag(content.speaker_image.url, class: "img-rounded")
+            .speaker-name
+              %p
+                %font{size: "5", face: "Hiragino Kaku Gothic Pro"}
+                  %b= simple_format content.speaker_name
+              %p
+                %a{href: "/events/1/"}
+                  %i.icon-time
+                  = l content.start_at, format: :time
+                  = '~'
+                  = l content.finish_at, format: :time
+            .float_clear
             %div
-              %br=content.speaker_profile
+              %br= content.speaker_profile
           %td.content-body
             %p
               %font{size: "5"}= content.title
