@@ -19,7 +19,7 @@ notifications:
 deploy:
   provider: heroku
   api_key:
-    secure: fWJYi3EInP02ZZE2Ny3GvDU6Oj0Mulg9814w08pzHOTOJ33BKmw8R3GH0RFV28Vs30n8LWZJ2z6tQrlT00xj2OTgdP2dt8RefOCXXrPQK9YiaeHENg0d+H/aDQUGZylFBEIcainPeROxeKkp0mkxVVZUsQSh+9MiM22ncidT4Dk=
+    secure: AqIMk6syr8XNbavfjmjL1pPWilymZoK1ICOyT980BJqzJ3yikFo8Eil1G42QnubX/Fi+sjsGSuromA33/hIZJS8BF8vSM1g5Fzqg7aXCkUeDmWWh4lf/bHotqXtXVd94iNUiK3uaPYhnUKdatr2vT+60hBlcBMKD12Al7P1Oc9U=
   app:
     master: matsuri2
   on:
