@@ -1,18 +1,26 @@
 language: ruby
 rvm:
-  - 2.0.0
+- 2.0.0
 gemfile:
-  - Gemfile
+- Gemfile
 env:
-  - DB=mysql
+- DB=mysql
 script:
-  - cd matsuri2
-  - bundle install --standalone --clean
-  - RAILS_ENV=test bundle exec rake --trace db:create
-  - RAILS_ENV=test bundle exec rake --trace db:migrate
-  - bundle exec rake db:test:prepare
-  - bundle exec rspec spec/
+- cd matsuri2
+- bundle install --standalone --clean
+- RAILS_ENV=test bundle exec rake --trace db:create
+- RAILS_ENV=test bundle exec rake --trace db:migrate
+- bundle exec rake db:test:prepare
+- bundle exec rspec spec/
 notifications:
   hipchat:
     rooms:
       secure: BL7krttYFqIoJHWkpSPDXvBuj1qr/B+lbn7hlZeOgGGPksEmhwHU5xJUm8J3nUp4atHATAxwWOL3OQ4//SeScUoC+2Op/l8TFcp8oXru1ke2MNNa0AL0LeBqxqMiIECiuOSjPEgnZZtG4AIgiTBAiJsTlJXDKnV09eixzpJTOjQ=
+deploy:
+  provider: heroku
+  api_key:
+    secure: AqIMk6syr8XNbavfjmjL1pPWilymZoK1ICOyT980BJqzJ3yikFo8Eil1G42QnubX/Fi+sjsGSuromA33/hIZJS8BF8vSM1g5Fzqg7aXCkUeDmWWh4lf/bHotqXtXVd94iNUiK3uaPYhnUKdatr2vT+60hBlcBMKD12Al7P1Oc9U=
+  app:
+    master: matsuri2
+  on:
+    repo: doyomeki/matsuri2
