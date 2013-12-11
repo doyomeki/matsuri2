@@ -1,30 +1,16 @@
 class Entry < ActiveRecord::Base
   acts_as_paranoid
-  before_create :delete_another_entry
+  before_create :delete_other_entries
+  attr_accessor :other_entries
 
   belongs_to :content
 
-=begin
-  def status(content, user)
-    Entry.where(content_id: content.id, user_id: user.id).present?
-  end
-
-  def self.status(content, user)
-    Entry.where(content_id: content.id, user_id: user.id).present? 
-  end
-
-  def self.another_status(content)
-    for another_content in Content.where(start_at: content.start_at) do
-      if another_content != content then
-        return another_content
-      end
-    end
-  end
-=end
-
-  def delete_another_entry
+  def delete_other_entries
+    @other_entries = []
     Content.where(start_at: self.content.start_at).each do |content|
-      content.entries.where(content_id: content.id).first.destroy unless content.id == self.content_id
+      other_entry = content.entries.where(user_id: self.user_id, content_id: content.id).first if content.id != self.content_id
+      other_entry.destroy if other_entry
+      @other_entries << other_entry if other_entry
     end
   end
 end

@@ -3,18 +3,19 @@ class EntriesController < ApplicationController
   before_action :set_user, only: [:insert_and_delete]
 
   def insert_and_delete
-    @entry = @content.entries.find_by_user_id(@user.id)
+    @entry = @content.entries.where(user_id: @user.id).first
     if @entry
       @entry.destroy
       respond_to do |format|
-        @status = @entry.present?
+        @status = @content.entries.where(user_id: @user.id).present?
         format.js
       end
     else
       @entry = Entry.new(content_id: @content.id, user_id: @user.id)
       respond_to do |format|
         if @entry.save then
-          @status =  @entry.present?
+          @status = @content.entries.where(user_id: @user.id).present?
+	  @other_entries = @entry.other_entries
           format.js
 	end
       end
