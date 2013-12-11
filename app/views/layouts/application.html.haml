@@ -46,7 +46,9 @@
                   %li= link_to t("helpers.links.logout"), destroy_user_session_path, method: :delete, class: "navbar-link"
                 - else
                   %li= link_to t("helpers.links.login"), new_user_session_path, class: "navbar-link"
-    .container
+              - if current_user and current_user.admin
+                %li= link_to t("menu.admin.users"), admin_users_path
+    .container-fluid
       .row-fluid
         .span12
           = bootstrap_flash

@@ -1,19 +1,23 @@
 .form-actions
   .message= t("messages.login")
+  .message
+    = t("messages.sign_up1")
+    = link_to t("helpers.links.sign_up"), new_user_registration_path
+    = t("messages.sign_up2")
   .message= t("messages.login_password")
 
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+= form_for(resource, html: { class: "form-horizontal" }, as: resource_name, url: session_path(resource_name)) do |f|
   .control-group
-    = f.label :code
+    = f.label :code, class: "control-label"
     .controls
       = f.text_field :code
 
   .control-group
-    = f.label :password
+    = f.label :password, class: "control-label"
     .controls
       = f.password_field :password
 
-  .control-group.remember_me
+  .control-group.remember_me.controls
     - if devise_mapping.rememberable?
       .remember_me_checkbox= f.check_box :remember_me
       .remember_me_label= f.label :remember_me

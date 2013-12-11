@@ -61,6 +61,9 @@ gem 'heroku'
 gem 'foreman'
 gem 'rails_12factor'
 gem 'newrelic_rpm'
+
+# Use "Travis"
+gem 'travis'
 # Use Haml for views
 gem 'haml-rails'
 gem 'erb2haml'
