@@ -3,23 +3,20 @@ class EntriesController < ApplicationController
   before_action :set_user, only: [:insert_and_delete]
 
   def insert_and_delete
-    if Entry.status(@content, @user) then
-      @entry = Entry.where(content_id: @content.id, user_id: @user.id).first
-      @another_content = Entry.another_status(@content)
-      @entry.destroy!
+    @entry = @content.entries.find_by_user_id(@user.id)
+    if @entry
+      @entry.destroy
       respond_to do |format|
-        @status = Entry.status(@content, @user)
+        @status = @entry.present?
         format.js
       end
     else
-      delete
-      @entry = Entry.new(id: @entry_id, content_id: @content.id, user_id: @user.id)
+      @entry = Entry.new(content_id: @content.id, user_id: @user.id)
       respond_to do |format|
         if @entry.save then
-          @status = Entry.status(@content, @user)
-          @another_content = Entry.another_status(@content)
+          @status =  @entry.present?
           format.js
-        end
+	end
       end
     end
   end
@@ -33,6 +30,7 @@ class EntriesController < ApplicationController
       @user = User.find(params[:user_id])
     end
 
+=begin
     def delete
       @entries = Entry.all
       @entries.each do |entry|
@@ -42,4 +40,5 @@ class EntriesController < ApplicationController
         end
       end
     end
+=end
 end

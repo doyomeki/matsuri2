@@ -1,7 +1,13 @@
+//if (<%#= @status %>) {
+//  $('#join_button_<%#= @content.id %> ').text("参加");
+//  $('#join_button_<%#= @another_content.id %> ').text("不参加"); 
+//} else {
+//  $('#join_button_<%#= @content.id %> ').text("不参加");
+//}
 
+alert(<%= @status %>)
 if (<%= @status %>) {
   $('#join_button_<%= @content.id %> ').text("参加");
-  $('#join_button_<%= @another_content.id %> ').text("不参加"); 
 } else {
   $('#join_button_<%= @content.id %> ').text("不参加");
 }
